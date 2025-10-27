@@ -1,5 +1,5 @@
 # Instructional Coaching E-Training Module
-## Supporting Merged Schools in Literacy & Pedagogical Excellence
+## Supporting K-8 Schools in Literacy & Pedagogical Excellence
 
 ### Overview
 This interactive e-training module is designed for instructional coaches working with recently merged K-8 schools facing literacy and pedagogical challenges. The module addresses specific issues common in urban educational settings, including teacher capacity building, culturally responsive teaching, and supporting educators on improvement plans.
@@ -97,21 +97,6 @@ Upon completion, instructional coaches will be able to:
 - **Full Module Completion**: 3-4 hours
 - **With Activities and Reflection**: 5-6 hours
 - **Including Resource Exploration**: 8-10 hours
-
-### Hosting on GitHub Pages
-1. Fork this repository
-2. Go to Settings > Pages
-3. Select source: Deploy from branch
-4. Choose main branch and /(root) folder
-5. Save and wait for deployment
-6. Access at: `https://[your-username].github.io/[repository-name]/`
-
-### Contributing
-Contributions are welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request with clear description
 
 ### Future Enhancements
 Planned additions include:
