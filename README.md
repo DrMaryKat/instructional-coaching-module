@@ -57,33 +57,6 @@ The training is built around a real-world scenario:
 - JavaScript enabled
 - No installation required - runs entirely in browser
 
-### How to Use
-1. **For Individual Learning**: 
-   - Open `index.html` in any web browser
-   - Progress through modules sequentially
-   - Complete activities and reflections
-   - Download resources as needed
-
-2. **For Group Training**:
-   - Host on GitHub Pages for easy access
-   - Share link with coaching team
-   - Use as foundation for facilitated discussions
-   - Customize content to match local context
-
-3. **For Organizations**:
-   - Fork repository to customize content
-   - Add organization-specific resources
-   - Track completion through additional analytics
-   - Integrate with existing LMS if needed
-
-### Customization Options
-The module is designed to be easily customizable:
-- Edit school demographics in the case study
-- Modify literacy concepts based on local curriculum
-- Add district-specific resources and links
-- Translate content for multilingual audiences
-- Include local data and examples
-
 ### Learning Outcomes
 Upon completion, instructional coaches will be able to:
 1. Analyze complex dynamics in merged urban schools
@@ -121,7 +94,7 @@ This educational resource is provided under Creative Commons Attribution-ShareAl
 ### Support
 For questions, suggestions, or support:
 - Create an issue in this repository
-- Contact: [your-email@domain.com]
+- Contact: mary.boudreaux20@gmail.com
 - Visit: [your-website.com]
 
 ### Acknowledgments
