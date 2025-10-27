@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questioning Techniques Rubric</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #16a085;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        
+        .intro {
+            background-color: #e8f8f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #16a085;
+        }
+        
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .rubric-table th {
+            background-color: #16a085;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .rubric-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            vertical-align: top;
+        }
+        
+        .rubric-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .criteria-header {
+            background-color: #1abc9c;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .level-1 {
+            background-color: #ffe5e5;
+        }
+        
+        .level-2 {
+            background-color: #fff4e5;
+        }
+        
+        .level-3 {
+            background-color: #fffce5;
+        }
+        
+        .level-4 {
+            background-color: #e5ffe5;
+        }
+        
+        h2 {
+            color: #16a085;
+            margin-top: 40px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #1abc9c;
+            margin-top: 30px;
+            font-size: 1.4em;
+        }
+        
+        .examples-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        
+        .tips-box {
+            background-color: #d5f4e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .warning-box {
+            background-color: #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #fdcb6e;
+        }
+        
+        .observation-notes {
+            background-color: white;
+            padding: 20px;
+            border: 2px dashed #16a085;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .observation-notes h3 {
+            margin-top: 0;
+        }
+        
+        .notes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .notes-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+        }
+        
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+        
+        .print-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            .rubric-table {
+                page-break-inside: avoid;
+            }
+            
+            body {
+                margin: 10px;
+            }
+        }
+        
+        ul {
+            line-height: 1.8;
+        }
+        
+        .dok-reference {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .dok-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .dok-table th,
+        .dok-table td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .dok-table th {
+            background-color: #34495e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Questioning Techniques Rubric</h1>
+        <p class="subtitle">Supporting K-3 Teachers in Developing Critical Thinking Through Questions</p>
+    </div>
+
+    <div class="intro">
+        <h3>Purpose</h3>
+        <p>This rubric supports instructional coaches in observing and providing feedback on questioning techniques in K-3 classrooms. It focuses on helping teachers move beyond recall questions to develop students' critical thinking skills through strategic questioning.</p>
+        
+        <h3>How to Use This Rubric</h3>
+        <ul>
+            <li>Use during classroom observations to assess current questioning practices</li>
+            <li>Share with teachers during pre-conferences to set goals</li>
+            <li>Reference during coaching conversations to provide specific feedback</li>
+            <li>Track progress over time by dating observations</li>
+        </ul>
+    </div>
+
+    <h2>Questioning Techniques Rubric</h2>
+    
+    <table class="rubric-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Criteria</th>
+                <th style="width: 20%;" class="level-1">Beginning (1)</th>
+                <th style="width: 20%;" class="level-2">Developing (2)</th>
+                <th style="width: 20%;" class="level-3">Proficient (3)</th>
+                <th style="width: 20%;" class="level-4">Exemplary (4)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="criteria-header"><strong>Question Complexity (DOK Levels)</strong></td>
+                <td class="level-1">Primarily asks Level 1 recall questions (who, what, when, where)</td>
+                <td class="level-2">Includes some Level 2 questions (how, why) but mostly Level 1</td>
+                <td class="level-3">Balances Levels 1-3, with intentional progression</td>
+                <td class="level-4">Strategically uses all DOK levels, including Level 4 extended thinking</td>
+            </tr>
+            
+            <tr>
+                <td class="criteria-header"><strong>Wait Time</strong></td>
+                <td class="level-1">Provides 0-1 seconds before calling on students or answering own question</td>
+                <td class="level-2">Sometimes pauses 2-3 seconds, inconsistent</td>
+                <td class="level-3">Consistently provides 3-5 seconds wait time</td>
+                <td class="level-4">Varies wait time based on complexity; teaches students to use thinking time</td>
+            </tr>
+            
+            <tr>
+                <td class="criteria-header"><strong>Student Engagement</strong></td>
+                <td class="level-1">Calls on volunteers only; same students answer</td>
+                <td class="level-2">Attempts to call on various students but patterns exist</td>
+                <td class="level-3">Uses strategies to engage all students (sticks, think-pair-share)</td>
+                <td class="level-4">All students actively engaged through varied participation structures</td>
+            </tr>
+            
+            <tr>
+                <td class="criteria-header"><strong>Follow-Up Questions</strong></td>
+                <td class="level-1">Accepts answers without probing; moves to next question</td>
+                <td class="level-2">Occasionally asks "why?" or "how do you know?"</td>
+                <td class="level-3">Regularly probes thinking with follow-up questions</td>
+                <td class="level-4">Skillfully builds on responses to deepen understanding</td>
+            </tr>
+            
+            <tr>
+                <td class="criteria-header"><strong>Cultural Responsiveness</strong></td>
+                <td class="level-1">Questions lack connection to students' lives/experiences</td>
+                <td class="level-2">Some attempts to connect to student experiences</td>
+                <td class="level-3">Questions regularly connect to students' cultures and lives</td>
+                <td class="level-4">Questions honor and build on cultural knowledge and experiences</td>
+            </tr>
+            
+            <tr>
+                <td class="criteria-header"><strong>Scaffolding</strong></td>
+                <td class="level-1">No differentiation; same questions for all</td>
+                <td class="level-2">Some attempts to modify questions for struggling students</td>
+                <td class="level-3">Strategically scaffolds questions based on student needs</td>
+                <td class="level-4">Expertly differentiates questions while maintaining rigor</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>DOK Level Reference Guide</h2>
+    
+    <div class="dok-reference">
+        <h3>Webb's Depth of Knowledge for K-3</h3>
+        
+        <table class="dok-table">
+            <thead>
+                <tr>
+                    <th>DOK Level</th>
+                    <th>Description</th>
+                    <th>K-3 Question Stems</th>
+                    <th>Example Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Level 1<br>Recall</strong></td>
+                    <td>Recall facts, definitions, terms, or simple procedures</td>
+                    <td>• What is...?<br>
+                        • Who was...?<br>
+                        • When did...?<br>
+                        • Where is...?<br>
+                        • How many...?</td>
+                    <td>• What color is the bear in the story?<br>
+                        • How many ducks are in the pond?<br>
+                        • What letter does 'cat' start with?</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 2<br>Skill/Concept</strong></td>
+                    <td>Use information or conceptual knowledge</td>
+                    <td>• How are...alike?<br>
+                        • What is different?<br>
+                        • Can you explain...?<br>
+                        • Why did...?<br>
+                        • What would happen if...?</td>
+                    <td>• How are the butterfly and moth alike?<br>
+                        • Why did the character feel sad?<br>
+                        • What pattern do you see?</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 3<br>Strategic Thinking</strong></td>
+                    <td>Reasoning, planning, using evidence</td>
+                    <td>• What is your opinion?<br>
+                        • Can you prove...?<br>
+                        • What might happen next?<br>
+                        • How would you solve...?<br>
+                        • What is the best...and why?</td>
+                    <td>• What would you do if you were the main character?<br>
+                        • How can we test if plants need sunlight?<br>
+                        • Which solution is best for our class pet problem?</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 4<br>Extended Thinking</strong></td>
+                    <td>Complex reasoning over time</td>
+                    <td>• Design a...<br>
+                        • Create a plan...<br>
+                        • Investigate...<br>
+                        • What connections...?<br>
+                        • Develop a...</td>
+                    <td>• Create a new ending and explain how it changes the story<br>
+                        • Design a habitat for our butterfly<br>
+                        • Plan a way to reduce waste in our classroom</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Examples of Effective Questioning Sequences</h2>
+    
+    <div class="examples-box">
+        <h3>Example 1: Reading - "The Three Little Pigs"</h3>
+        <ul>
+            <li><strong>Level 1:</strong> "What did the first pig use to build his house?" (straw)</li>
+            <li><strong>Level 2:</strong> "Why do you think the third pig chose bricks?" (stronger, learned from others)</li>
+            <li><strong>Level 3:</strong> "If you were a pig, what material would you choose and why?"</li>
+            <li><strong>Level 4:</strong> "Design a house that would keep all three pigs safe. What would you need?"</li>
+        </ul>
+        
+        <p><strong>Cultural Connection:</strong> "What materials do people in our neighborhood use to build strong homes?"</p>
+    </div>
+    
+    <div class="examples-box">
+        <h3>Example 2: Math - Addition Within 20</h3>
+        <ul>
+            <li><strong>Level 1:</strong> "What is 8 + 5?" (13)</li>
+            <li><strong>Level 2:</strong> "How did you figure out 8 + 5? Show me your strategy."</li>
+            <li><strong>Level 3:</strong> "Can you create a word problem that equals 13?"</li>
+            <li><strong>Level 4:</strong> "How many different ways can you make 13? Create a pattern."</li>
+        </ul>
+        
+        <p><strong>Cultural Connection:</strong> "If you're at the corner store with $13, what could you buy?"</p>
+    </div>
+    
+    <div class="examples-box">
+        <h3>Example 3: Science - Plant Growth</h3>
+        <ul>
+            <li><strong>Level 1:</strong> "What parts of a plant can you name?" (roots, stem, leaves)</li>
+            <li><strong>Level 2:</strong> "How are seeds and bulbs different?"</li>
+            <li><strong>Level 3:</strong> "What would happen if we put one plant in the closet?"</li>
+            <li><strong>Level 4:</strong> "Design an experiment to see what plants need to grow."</li>
+        </ul>
+        
+        <p><strong>Cultural Connection:</strong> "What plants does your family grow at home or like to eat?"</p>
+    </div>
+
+    <h2>Effective Questioning Strategies</h2>
+    
+    <div class="tips-box">
+        <h3>Talk Moves to Extend Thinking</h3>
+        <ul>
+            <li><strong>Revoicing:</strong> "So you're saying that..." (clarifies and validates)</li>
+            <li><strong>Reasoning:</strong> "Why do you think that?" (probes deeper)</li>
+            <li><strong>Adding On:</strong> "Who can add to Maria's idea?" (builds community)</li>
+            <li><strong>Turn & Talk:</strong> "Tell your partner what you think" (increases participation)</li>
+            <li><strong>Wait Time:</strong> "I'm going to give everyone thinking time" (normalizes pausing)</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Common Pitfalls to Avoid</h3>
+        <ul>
+            <li><strong>Rapid-fire questioning:</strong> Not allowing time for deep thinking</li>
+            <li><strong>Guess what I'm thinking:</strong> Looking for one "right" answer only</li>
+            <li><strong>Ignoring incorrect answers:</strong> Missing teaching opportunities</li>
+            <li><strong>Complex language:</strong> Using vocabulary beyond students' comprehension</li>
+            <li><strong>Closed questioning patterns:</strong> Only yes/no or single-word responses</li>
+        </ul>
+    </div>
+
+    <h2>Coaching Conversation Starters</h2>
+    
+    <div class="tips-box">
+        <h3>After Observation</h3>
+        <ul>
+            <li>"I noticed you asked 15 questions in that lesson. Let's look at the types..."</li>
+            <li>"Your students were really engaged when you asked about their experiences with..."</li>
+            <li>"What did you notice about student responses when you provided wait time?"</li>
+            <li>"Let's think about how we could push that question to a higher DOK level..."</li>
+            <li>"Tell me about your questioning plan for this lesson."</li>
+        </ul>
+    </div>
+
+    <div class="observation-notes">
+        <h3>Observation Notes Section</h3>
+        
+        <div class="notes-grid">
+            <div class="notes-section">
+                <label><strong>Teacher:</strong></label>
+                <input type="text" placeholder="Teacher name">
+                
+                <label><strong>Date:</strong></label>
+                <input type="date">
+                
+                <label><strong>Lesson Topic:</strong></label>
+                <input type="text" placeholder="Subject and topic">
+            </div>
+            
+            <div class="notes-section">
+                <label><strong>DOK Levels Observed:</strong></label>
+                <p>☐ Level 1 &nbsp; ☐ Level 2 &nbsp; ☐ Level 3 &nbsp; ☐ Level 4</p>
+                
+                <label><strong>Average Wait Time:</strong></label>
+                <input type="text" placeholder="Seconds observed">
+                
+                <label><strong>Student Participation:</strong></label>
+                <input type="text" placeholder="# of different students">
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <label><strong>Effective Questions Heard:</strong></label>
+            <textarea placeholder="Record specific questions that promoted critical thinking..."></textarea>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <label><strong>Areas for Growth:</strong></label>
+            <textarea placeholder="Note specific areas to address in coaching conversation..."></textarea>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <label><strong>Next Steps:</strong></label>
+            <textarea placeholder="Action items for teacher and coach..."></textarea>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Rubric</button>
+</body>
+</html>

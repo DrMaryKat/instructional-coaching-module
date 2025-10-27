@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Asset Mapping Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background-color: #27ae60;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin: -40px -40px 30px -40px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        .intro-box {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #27ae60;
+            margin-bottom: 30px;
+        }
+        
+        .asset-category {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        h2 {
+            color: #27ae60;
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+        
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .input-group {
+            margin: 15px 0;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .example-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .reflection-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .action-box {
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .tips-box {
+            background-color: #fff;
+            border: 2px dashed #27ae60;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .print-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+        }
+        
+        .print-button:hover {
+            background-color: #229954;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .asset-category {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #555;
+            padding: 15px;
+            border-left: 3px solid #27ae60;
+            margin: 20px 0;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Cultural Asset Mapping Guide</h1>
+            <p class="subtitle">Discovering and Leveraging Community Strengths in Education</p>
+        </div>
+
+        <div class="intro-box">
+            <h3>What is Cultural Asset Mapping?</h3>
+            <p>Cultural asset mapping is a strength-based approach to understanding and valuing the diverse cultural resources, knowledge, and practices that students and their families bring to the educational environment. This tool helps educators move beyond deficit-based thinking to recognize and build upon the rich cultural capital present in their school communities.</p>
+            
+            <p class="quote">"Students' home and community practices should be viewed as resources for learning, not obstacles to overcome." - Luis Moll</p>
+        </div>
+
+        <!-- Language Assets -->
+        <div class="asset-category">
+            <h2>1. Language & Communication Assets</h2>
+            
+            <p>Document the linguistic diversity and communication strengths in your classroom:</p>
+            
+            <div class="input-group">
+                <label for="home-languages">Home Languages Spoken (list all):</label>
+                <textarea id="home-languages" placeholder="Example: Spanish, Haitian Creole, Arabic, African American Vernacular English (AAVE), Vietnamese..."></textarea>
+            </div>
+
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="bilingual-count">Number of Bilingual/Multilingual Students:</label>
+                    <input type="number" id="bilingual-count">
+                </div>
+                <div class="input-group">
+                    <label for="interpreters">Family Members Who Can Interpret:</label>
+                    <input type="number" id="interpreters">
+                </div>
+            </div>
+
+            <h3>Communication Patterns to Honor:</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="storytelling">
+                    <label for="storytelling">Oral storytelling traditions</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="call-response">
+                    <label for="call-response">Call and response</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="code-switching">
+                    <label for="code-switching">Code-switching abilities</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="nonverbal">
+                    <label for="nonverbal">Rich nonverbal communication</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="multilingual-wordplay">
+                    <label for="multilingual-wordplay">Multilingual wordplay</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="translation">
+                    <label for="translation">Translation skills</label>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <strong>Classroom Application:</strong> Create a "Language of the Week" featuring words from students' home languages. Have multilingual students teach greetings, numbers, or content vocabulary in their languages.
+            </div>
+        </div>
+
+        <!-- Family Knowledge Assets -->
+        <div class="asset-category">
+            <h2>2. Family & Community Knowledge</h2>
+            
+            <p>Identify the "funds of knowledge" - the skills, experiences, and expertise within families:</p>
+            
+            <div class="input-group">
+                <label for="family-professions">Family Professions & Skills (be specific):</label>
+                <textarea id="family-professions" placeholder="Example: 
+- Maria's mother: Restaurant owner (business math, customer service)
+- James's uncle: Auto mechanic (physics applications, problem-solving)
+- Aisha's grandmother: Seamstress (geometry, measurement, design)"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="household-knowledge">Household Knowledge & Practices:</label>
+                <textarea id="household-knowledge" placeholder="Example:
+- Cooking/recipes (chemistry, measurement, cultural history)
+- Budgeting (practical math, economics)
+- Home repairs (engineering, tools, problem-solving)
+- Gardening (biology, seasons, sustainability)"></textarea>
+            </div>
+
+            <h3>Community Expertise Available:</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="entrepreneurship">
+                    <label for="entrepreneurship">Entrepreneurship/Small business</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="trades">
+                    <label for="trades">Skilled trades</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="arts">
+                    <label for="arts">Arts & music</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="agriculture">
+                    <label for="agriculture">Agriculture/farming</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="healthcare">
+                    <label for="healthcare">Healthcare/caregiving</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="technology">
+                    <label for="technology">Technology skills</label>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <strong>Tip:</strong> Send home a "Family Expertise Survey" at the beginning of the year. Ask: "What do you know how to do that you could teach or demonstrate to our class?"
+            </div>
+        </div>
+
+        <!-- Cultural Traditions Assets -->
+        <div class="asset-category">
+            <h2>3. Cultural Traditions & Values</h2>
+            
+            <div class="input-group">
+                <label for="celebrations">Cultural Celebrations & Holidays:</label>
+                <textarea id="celebrations" placeholder="List celebrations important to your students' families, including religious, cultural, and community events..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="values">Core Cultural Values (as expressed by families):</label>
+                <textarea id="values" placeholder="Example:
+- Respect for elders
+- Collective responsibility
+- Hospitality
+- Perseverance
+- Faith/spirituality
+- Education as liberation"></textarea>
+            </div>
+
+            <h3>Cultural Practices Present:</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="music-traditions">
+                    <label for="music-traditions">Music & dance traditions</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="food-traditions">
+                    <label for="food-traditions">Food & cooking traditions</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="art-crafts">
+                    <label for="art-crafts">Traditional arts & crafts</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="games">
+                    <label for="games">Cultural games & sports</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dress">
+                    <label for="dress">Traditional dress/fashion</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ceremonies">
+                    <label for="ceremonies">Life cycle ceremonies</label>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <strong>Integration Idea:</strong> Create a "Cultural Calendar" with students, marking important dates from all cultures represented. Use these as learning opportunities across subjects.
+            </div>
+        </div>
+
+        <!-- Problem-Solving Assets -->
+        <div class="asset-category">
+            <h2>4. Ways of Learning & Problem-Solving</h2>
+            
+            <p>Recognize diverse approaches to learning and knowledge construction:</p>
+            
+            <h3>Learning Preferences Observed:</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="collaborative">
+                    <label for="collaborative">Collaborative/group learning</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="hands-on">
+                    <label for="hands-on">Hands-on/kinesthetic learning</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="verbal">
+                    <label for="verbal">Verbal/discussion-based</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="visual">
+                    <label for="visual">Visual/artistic expression</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="musical">
+                    <label for="musical">Musical/rhythmic patterns</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="movement">
+                    <label for="movement">Movement-based learning</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="problem-solving">Cultural Problem-Solving Approaches:</label>
+                <textarea id="problem-solving" placeholder="Example:
+- Seeking elder wisdom
+- Community consultation
+- Trial and error with peer support
+- Spiritual/meditative reflection
+- Collective brainstorming"></textarea>
+            </div>
+
+            <div class="tips-box">
+                <strong>Remember:</strong> Different cultures have different ways of showing knowledge. Some students may show respect by not making eye contact or by waiting to be called on rather than volunteering.
+            </div>
+        </div>
+
+        <!-- Community Networks -->
+        <div class="asset-category">
+            <h2>5. Community Networks & Resources</h2>
+            
+            <div class="input-group">
+                <label for="organizations">Community Organizations Connected to Families:</label>
+                <textarea id="organizations" placeholder="Example:
+- Churches/mosques/temples
+- Community centers
+- Cultural associations
+- Youth programs
+- Local businesses
+- Social service organizations"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="gathering-spaces">Community Gathering Spaces:</label>
+                <textarea id="gathering-spaces" placeholder="List places where families gather: barbershops, parks, libraries, restaurants, etc."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="support-systems">Informal Support Systems:</label>
+                <textarea id="support-systems" placeholder="Example:
+- Extended family networks
+- Godparents/fictive kin
+- Neighborhood watch groups
+- Childcare cooperatives
+- Information sharing networks"></textarea>
+            </div>
+        </div>
+
+        <!-- Action Planning -->
+        <div class="action-box">
+            <h2>Action Planning: Leveraging Cultural Assets</h2>
+            
+            <h3>Immediate Actions (This Week):</h3>
+            <ol>
+                <li>Choose one cultural asset to incorporate into your teaching:
+                    <input type="text" style="width: 100%; margin-top: 10px;" placeholder="Example: Invite Maria's mother to teach fraction concepts using cooking">
+                </li>
+                <li>Identify one way to honor home languages:
+                    <input type="text" style="width: 100%; margin-top: 10px;" placeholder="Example: Create multilingual word walls">
+                </li>
+                <li>Plan one community connection:
+                    <input type="text" style="width: 100%; margin-top: 10px;" placeholder="Example: Visit local community center to learn about resources">
+                </li>
+            </ol>
+
+            <h3>Ongoing Strategies:</h3>
+            <ul>
+                <li>Regular family surveys to discover new assets</li>
+                <li>Home visits to understand family contexts</li>
+                <li>Student-led sharing of cultural knowledge</li>
+                <li>Integration of community experts as co-teachers</li>
+                <li>Curriculum connections to local cultural assets</li>
+            </ul>
+        </div>
+
+        <!-- Reflection -->
+        <div class="reflection-box">
+            <h2>Reflection Questions</h2>
+            <ol>
+                <li>What cultural assets surprised you or challenged your assumptions?</li>
+                <li>How can these assets address current learning challenges in your classroom?</li>
+                <li>What barriers might prevent families from sharing their assets? How can you address them?</li>
+                <li>How will you ensure that cultural assets are integrated authentically, not superficially?</li>
+                <li>What support do you need to better leverage these cultural assets?</li>
+            </ol>
+        </div>
+
+        <div class="quote">
+            "When students see their cultures, languages, and experiences reflected and valued in the classroom, they are more likely to engage and succeed academically." - Geneva Gay
+        </div>
+
+        <button class="print-button" onclick="window.print()">Print Cultural Asset Map</button>
+    </div>
+</body>
+</html>

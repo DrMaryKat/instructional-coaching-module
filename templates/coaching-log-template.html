@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructional Coaching Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .log-entry {
+            margin: 25px 0;
+            padding: 20px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+            font-size: 1.6em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        
+        .session-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+        
+        .goals-section {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .action-items {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .reflection-section {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .rating-scale {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+            align-items: center;
+        }
+        
+        .rating-scale label {
+            margin: 0;
+            font-weight: normal;
+        }
+        
+        .print-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+        }
+        
+        .print-button:hover {
+            background-color: #229954;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                margin: 10px;
+            }
+            
+            .log-entry {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .summary-section {
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            page-break-before: always;
+        }
+        
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: white;
+        }
+        
+        .evidence-table th,
+        .evidence-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .evidence-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .next-steps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .timeline-item {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .priority-high {
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .priority-medium {
+            border-left: 5px solid #f39c12;
+        }
+        
+        .priority-low {
+            border-left: 5px solid #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Instructional Coaching Log</h1>
+        <p class="subtitle">Documenting Coaching Conversations and Teacher Growth</p>
+    </div>
+
+    <!-- Session 1 Entry -->
+    <div class="log-entry">
+        <h2>Coaching Session Details</h2>
+        
+        <div class="session-info">
+            <div class="info-item">
+                <label for="teacher-name">Teacher Name:</label>
+                <input type="text" id="teacher-name">
+            </div>
+            <div class="info-item">
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+            <div class="info-item">
+                <label for="time">Time:</label>
+                <input type="time" id="time">
+            </div>
+            <div class="info-item">
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration" placeholder="e.g., 45 minutes">
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <label for="session-type">Type of Session:</label>
+            <select id="session-type">
+                <option>Pre-Conference</option>
+                <option>Classroom Observation</option>
+                <option>Post-Conference</option>
+                <option>Check-in Meeting</option>
+                <option>Co-Teaching Session</option>
+                <option>Professional Development</option>
+                <option>Planning Session</option>
+                <option>Other</option>
+            </select>
+        </div>
+        
+        <div class="info-item" style="margin-top: 15px;">
+            <label for="focus-area">Primary Focus Area:</label>
+            <input type="text" id="focus-area" placeholder="e.g., Critical questioning techniques, Literacy strategies">
+        </div>
+
+        <div class="goals-section">
+            <h3>Current Goals & Progress</h3>
+            
+            <div class="info-item">
+                <label for="current-goal">Current Goal (from previous session):</label>
+                <textarea id="current-goal" placeholder="What goal has the teacher been working on?"></textarea>
+            </div>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="progress-evidence">Evidence of Progress:</label>
+                <textarea id="progress-evidence" placeholder="What specific evidence shows progress toward the goal?"></textarea>
+            </div>
+            
+            <div class="rating-scale">
+                <label><strong>Progress Rating:</strong></label>
+                <label><input type="radio" name="progress" value="1"> Not Yet Started</label>
+                <label><input type="radio" name="progress" value="2"> Beginning</label>
+                <label><input type="radio" name="progress" value="3"> Developing</label>
+                <label><input type="radio" name="progress" value="4"> Proficient</label>
+                <label><input type="radio" name="progress" value="5"> Exceeding</label>
+            </div>
+        </div>
+
+        <div class="log-entry" style="background-color: white; border-color: #ddd;">
+            <h3>Discussion Notes</h3>
+            
+            <div class="info-item">
+                <label for="key-points">Key Points Discussed:</label>
+                <textarea id="key-points" rows="6" placeholder="Main topics, concerns, ideas shared during the session..."></textarea>
+            </div>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="teacher-insights">Teacher's Insights/Reflections:</label>
+                <textarea id="teacher-insights" rows="4" placeholder="What did the teacher realize or reflect on?"></textarea>
+            </div>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="challenges">Challenges Identified:</label>
+                <textarea id="challenges" rows="4" placeholder="What obstacles or difficulties were discussed?"></textarea>
+            </div>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="successes">Successes Celebrated:</label>
+                <textarea id="successes" rows="4" placeholder="What wins or positive outcomes were acknowledged?"></textarea>
+            </div>
+        </div>
+
+        <div class="action-items">
+            <h3>Action Items & Next Steps</h3>
+            
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>Action Item</th>
+                        <th>Responsible</th>
+                        <th>Timeline</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" style="width: 100%;" placeholder="Specific action to take"></td>
+                        <td>
+                            <select style="width: 100%;">
+                                <option>Teacher</option>
+                                <option>Coach</option>
+                                <option>Both</option>
+                            </select>
+                        </td>
+                        <td><input type="text" style="width: 100%;" placeholder="By when?"></td>
+                        <td>
+                            <select style="width: 100%;">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="width: 100%;" placeholder="Specific action to take"></td>
+                        <td>
+                            <select style="width: 100%;">
+                                <option>Teacher</option>
+                                <option>Coach</option>
+                                <option>Both</option>
+                            </select>
+                        </td>
+                        <td><input type="text" style="width: 100%;" placeholder="By when?"></td>
+                        <td>
+                            <select style="width: 100%;">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="width: 100%;" placeholder="Specific action to take"></td>
+                        <td>
+                            <select style="width: 100%;">
+                                <option>Teacher</option>
+                                <option>Coach</option>
+                                <option>Both</option>
+                            </select>
+                        </td>
+                        <td><input type="text" style="width: 100%;" placeholder="By when?"></td>
+                        <td>
+                            <select style="width: 100%;">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="new-goal">New/Revised Goal:</label>
+                <textarea id="new-goal" placeholder="Based on today's discussion, what is the teacher's goal moving forward?"></textarea>
+            </div>
+        </div>
+
+        <h3>Resources & Support</h3>
+        <div class="checkbox-group">
+            <div class="checkbox-item">
+                <input type="checkbox" id="articles">
+                <label for="articles">Articles/Readings Shared</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="videos">
+                <label for="videos">Videos/Demonstrations</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="templates">
+                <label for="templates">Templates/Tools</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="modeling">
+                <label for="modeling">Modeling Scheduled</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="observation">
+                <label for="observation">Peer Observation Arranged</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="coteaching">
+                <label for="coteaching">Co-Teaching Planned</label>
+            </div>
+        </div>
+        
+        <div class="info-item" style="margin-top: 15px;">
+            <label for="resources-details">Specific Resources Provided:</label>
+            <textarea id="resources-details" rows="3" placeholder="List specific materials, links, or resources shared..."></textarea>
+        </div>
+
+        <div class="reflection-section">
+            <h3>Coach's Reflection</h3>
+            
+            <div class="info-item">
+                <label for="coach-observations">Coach's Observations:</label>
+                <textarea id="coach-observations" rows="4" placeholder="What did you notice about the teacher's readiness, engagement, or growth?"></textarea>
+            </div>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="coach-wonderings">Questions/Wonderings:</label>
+                <textarea id="coach-wonderings" rows="3" placeholder="What questions emerged for you as a coach?"></textarea>
+            </div>
+            
+            <div class="info-item" style="margin-top: 15px;">
+                <label for="coach-next">Coach's Next Steps:</label>
+                <textarea id="coach-next" rows="3" placeholder="What do you need to prepare or consider before the next session?"></textarea>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <label for="follow-up">Follow-Up Plan:</label>
+            <div class="next-steps-grid">
+                <div class="timeline-item priority-high">
+                    <strong>Within 48 hours:</strong>
+                    <input type="text" style="width: 100%; margin-top: 5px;" placeholder="e.g., Send resources">
+                </div>
+                <div class="timeline-item priority-medium">
+                    <strong>Within 1 week:</strong>
+                    <input type="text" style="width: 100%; margin-top: 5px;" placeholder="e.g., Schedule observation">
+                </div>
+                <div class="timeline-item priority-low">
+                    <strong>Within 2 weeks:</strong>
+                    <input type="text" style="width: 100%; margin-top: 5px;" placeholder="e.g., Check-in meeting">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Monthly Summary Section -->
+    <div class="summary-section">
+        <h2>Monthly Coaching Summary</h2>
+        
+        <div class="session-info">
+            <div class="info-item">
+                <label for="month">Month:</label>
+                <input type="text" id="month" placeholder="e.g., October 2025">
+            </div>
+            <div class="info-item">
+                <label for="total-sessions">Total Sessions:</label>
+                <input type="number" id="total-sessions">
+            </div>
+            <div class="info-item">
+                <label for="total-hours">Total Hours:</label>
+                <input type="number" id="total-hours">
+            </div>
+        </div>
+        
+        <h3>Types of Support Provided</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Support Type</th>
+                    <th>Frequency</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pre/Post Conferences</td>
+                    <td><input type="number" style="width: 60px;"></td>
+                    <td><input type="text" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td>Classroom Observations</td>
+                    <td><input type="number" style="width: 60px;"></td>
+                    <td><input type="text" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td>Co-Teaching Sessions</td>
+                    <td><input type="number" style="width: 60px;"></td>
+                    <td><input type="text" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td>Resource Sharing</td>
+                    <td><input type="number" style="width: 60px;"></td>
+                    <td><input type="text" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td>Professional Development</td>
+                    <td><input type="number" style="width: 60px;"></td>
+                    <td><input type="text" style="width: 100%;"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-item" style="margin-top: 20px;">
+            <label for="monthly-patterns">Patterns Noticed This Month:</label>
+            <textarea id="monthly-patterns" rows="4" placeholder="What trends or patterns have emerged across coaching sessions?"></textarea>
+        </div>
+        
+        <div class="info-item" style="margin-top: 15px;">
+            <label for="monthly-growth">Evidence of Teacher Growth:</label>
+            <textarea id="monthly-growth" rows="4" placeholder="What specific growth have you observed?"></textarea>
+        </div>
+        
+        <div class="info-item" style="margin-top: 15px;">
+            <label for="monthly-concerns">Ongoing Concerns:</label>
+            <textarea id="monthly-concerns" rows="4" placeholder="What areas still need attention?"></textarea>
+        </div>
+        
+        <div class="info-item" style="margin-top: 15px;">
+            <label for="next-month-focus">Focus for Next Month:</label>
+            <textarea id="next-month-focus" rows="4" placeholder="Based on this month's work, what should be prioritized next month?"></textarea>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Coaching Log</button>
+</body>
+</html>

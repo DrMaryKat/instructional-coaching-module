@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Context Mapping Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        
+        .input-group {
+            margin: 15px 0;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .checkbox-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .print-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .print-button:hover {
+            background-color: #229954;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                margin: 10px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .notes {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-left: 4px solid #27ae60;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>School Context Mapping Template</h1>
+        <p>Comprehensive Analysis Tool for Instructional Coaches</p>
+    </div>
+
+    <div class="section">
+        <h2>Basic School Information</h2>
+        <div class="two-column">
+            <div class="input-group">
+                <label for="school-name">School Name:</label>
+                <input type="text" id="school-name" placeholder="Washington Elementary-Middle School">
+            </div>
+            <div class="input-group">
+                <label for="school-type">School Type:</label>
+                <input type="text" id="school-type" placeholder="K-8 Merged School">
+            </div>
+            <div class="input-group">
+                <label for="location">Location/Neighborhood:</label>
+                <input type="text" id="location" placeholder="Inner city neighborhood">
+            </div>
+            <div class="input-group">
+                <label for="assessment-date">Assessment Date:</label>
+                <input type="date" id="assessment-date">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Student Demographics & Data</h2>
+        <div class="two-column">
+            <div class="input-group">
+                <label for="total-students">Total Number of Students:</label>
+                <input type="number" id="total-students" placeholder="500">
+            </div>
+            <div class="input-group">
+                <label for="grade-range">Grade Range:</label>
+                <input type="text" id="grade-range" placeholder="K-8">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <label>Demographic Breakdown (percentages):</label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Demographic Group</th>
+                        <th>Percentage</th>
+                        <th>Number of Students</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>African American</td>
+                        <td><input type="text" placeholder="82%"></td>
+                        <td><input type="number" placeholder="410"></td>
+                    </tr>
+                    <tr>
+                        <td>Hispanic/Latino</td>
+                        <td><input type="text" placeholder="%"></td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>White</td>
+                        <td><input type="text" placeholder="%"></td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>Asian</td>
+                        <td><input type="text" placeholder="%"></td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>Other/Multiracial</td>
+                        <td><input type="text" placeholder="%"></td>
+                        <td><input type="number"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="two-column">
+            <div class="input-group">
+                <label for="free-lunch">Free/Reduced Lunch %:</label>
+                <input type="text" id="free-lunch" placeholder="85%">
+            </div>
+            <div class="input-group">
+                <label for="ell-percentage">English Language Learners %:</label>
+                <input type="text" id="ell-percentage" placeholder="15%">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="academic-data">Academic Performance Data (test scores, reading levels, etc.):</label>
+            <textarea id="academic-data" placeholder="Include current reading levels, standardized test scores, growth data..."></textarea>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Teacher Analysis</h2>
+        <div class="two-column">
+            <div class="input-group">
+                <label for="total-teachers">Total Number of Teachers:</label>
+                <input type="number" id="total-teachers" placeholder="24">
+            </div>
+            <div class="input-group">
+                <label for="improvement-plans">Teachers on Improvement Plans:</label>
+                <input type="number" id="improvement-plans" placeholder="16">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Teacher Demographics:</label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Demographic</th>
+                        <th>Number</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>White</td>
+                        <td><input type="number" placeholder="19"></td>
+                        <td><input type="text" placeholder="79%"></td>
+                    </tr>
+                    <tr>
+                        <td>African American</td>
+                        <td><input type="number"></td>
+                        <td><input type="text" placeholder="%"></td>
+                    </tr>
+                    <tr>
+                        <td>Hispanic/Latino</td>
+                        <td><input type="number"></td>
+                        <td><input type="text" placeholder="%"></td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td><input type="number"></td>
+                        <td><input type="text" placeholder="%"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="input-group">
+            <label for="teacher-strengths">Identified Teacher Strengths:</label>
+            <textarea id="teacher-strengths" placeholder="List specific strengths observed in the teaching staff..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="growth-areas">Areas for Professional Growth:</label>
+            <textarea id="growth-areas" placeholder="K-3: Critical questioning techniques
+4-8: Foundational literacy knowledge (phonemes, graphemes, etc.)
+All: Culturally responsive teaching practices"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Teacher Experience Levels:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> 0-3 years: <input type="number" style="width: 60px;"></label>
+                <label><input type="checkbox"> 4-10 years: <input type="number" style="width: 60px;"></label>
+                <label><input type="checkbox"> 11-20 years: <input type="number" style="width: 60px;"></label>
+                <label><input type="checkbox"> 20+ years: <input type="number" style="width: 60px;"></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>School Culture & Climate</h2>
+        <div class="input-group">
+            <label>Key Cultural Considerations:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Recently merged school (cultural integration needed)</label>
+                <label><input type="checkbox"> Cultural mismatch between staff and students</label>
+                <label><input type="checkbox"> High teacher turnover</label>
+                <label><input type="checkbox"> Low teacher morale</label>
+                <label><input type="checkbox"> Strong community involvement</label>
+                <label><input type="checkbox"> Limited family engagement</label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="climate-notes">Additional Climate Observations:</label>
+            <textarea id="climate-notes" placeholder="Describe the overall school climate, relationships, communication patterns..."></textarea>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Resources & Assets</h2>
+        <div class="input-group">
+            <label for="available-resources">Available Resources (technology, curriculum, materials):</label>
+            <textarea id="available-resources" placeholder="List available teaching resources, technology access, curriculum materials..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="community-assets">Community Assets & Partnerships:</label>
+            <textarea id="community-assets" placeholder="Local organizations, parent volunteers, business partnerships, cultural centers..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="funding-sources">Funding Sources & Constraints:</label>
+            <textarea id="funding-sources" placeholder="Title I, grants, budget limitations..."></textarea>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Priority Areas & Action Planning</h2>
+        <div class="input-group">
+            <label for="immediate-needs">Immediate Needs (0-3 months):</label>
+            <textarea id="immediate-needs" placeholder="1. Build foundational literacy knowledge for middle school teachers
+2. Develop critical questioning skills for K-3 teachers
+3. Establish trust with teachers on improvement plans"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="short-term-goals">Short-term Goals (3-6 months):</label>
+            <textarea id="short-term-goals" placeholder="List 3-5 achievable goals for the next semester..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="long-term-vision">Long-term Vision (6-12 months):</label>
+            <textarea id="long-term-vision" placeholder="Describe the desired state of the school after one year of coaching support..."></textarea>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Coaching Strategy Notes</h2>
+        <div class="input-group">
+            <label for="coaching-approach">Proposed Coaching Approach:</label>
+            <textarea id="coaching-approach" placeholder="Describe your planned approach, considering the school's unique context..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="potential-barriers">Potential Barriers & Mitigation Strategies:</label>
+            <textarea id="potential-barriers" placeholder="Identify potential challenges and how you plan to address them..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="success-metrics">Success Metrics:</label>
+            <textarea id="success-metrics" placeholder="How will you measure progress? What data will you collect?"></textarea>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>Reflection Questions:</h3>
+        <ul>
+            <li>How does the cultural mismatch between teachers and students impact learning?</li>
+            <li>What existing strengths can be leveraged to support growth?</li>
+            <li>How can community assets be incorporated into the improvement plan?</li>
+            <li>What support do teachers on improvement plans need most?</li>
+        </ul>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Context Map</button>
+</body>
+</html>

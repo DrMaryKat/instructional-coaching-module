@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literacy Knowledge Assessment for Teachers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background-color: #e74c3c;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin: -40px -40px 30px -40px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        .intro {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            color: #c0392b;
+            margin-top: 0;
+            font-size: 1.5em;
+            border-bottom: 2px solid #c0392b;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        
+        .answer-space {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        textarea.answer-space {
+            min-height: 80px;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+        }
+        
+        .multiple-choice {
+            margin: 10px 0;
+        }
+        
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .choice:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .choice input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .example-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+            font-style: italic;
+        }
+        
+        .note-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .reflection-section {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .confidence-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        
+        .confidence-scale label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .confidence-scale input[type="radio"] {
+            margin-top: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: white;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .print-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .question {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Literacy Knowledge Assessment</h1>
+            <p>For Middle School Teachers (Grades 4-8)</p>
+        </div>
+
+        <div class="intro">
+            <h3>Purpose</h3>
+            <p>This assessment helps identify your current knowledge of literacy concepts to better support your professional development. There are no grades or evaluations - this is simply to help us provide the most relevant support for you and your students.</p>
+            
+            <h3>Instructions</h3>
+            <p>Please answer each question to the best of your ability. If you're unsure, that's okay! Write what you think or leave it blank. The goal is to identify areas where we can provide helpful resources and training.</p>
+        </div>
+
+        <!-- Section 1: Basic Literacy Concepts -->
+        <div class="section">
+            <h2>Section 1: Basic Literacy Concepts</h2>
+            
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <p>Define the following terms in your own words:</p>
+                
+                <p><strong>a) Phoneme:</strong></p>
+                <input type="text" class="answer-space" placeholder="Your definition...">
+                
+                <p><strong>b) Grapheme:</strong></p>
+                <input type="text" class="answer-space" placeholder="Your definition...">
+                
+                <p><strong>c) Morpheme:</strong></p>
+                <input type="text" class="answer-space" placeholder="Your definition...">
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <p>How many phonemes are in the word "thought"?</p>
+                <div class="multiple-choice">
+                    <label class="choice">
+                        <input type="radio" name="q2" value="a"> 3 phonemes
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q2" value="b"> 5 phonemes
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q2" value="c"> 7 phonemes
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q2" value="d"> 8 phonemes
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <p>Circle all the words that contain a digraph:</p>
+                <table>
+                    <tr>
+                        <td>□ ship</td>
+                        <td>□ rain</td>
+                        <td>□ chair</td>
+                        <td>□ book</td>
+                    </tr>
+                    <tr>
+                        <td>□ phone</td>
+                        <td>□ cat</td>
+                        <td>□ three</td>
+                        <td>□ toy</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <p>Explain the difference between decoding and encoding:</p>
+                <textarea class="answer-space" placeholder="Your explanation..."></textarea>
+            </div>
+        </div>
+
+        <!-- Section 2: Morphology and Vocabulary -->
+        <div class="section">
+            <h2>Section 2: Morphology and Vocabulary</h2>
+            
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <p>Break down the word "unbelievable" into its morphemes and identify each type:</p>
+                <table>
+                    <tr>
+                        <th>Morpheme</th>
+                        <th>Type (prefix/root/suffix)</th>
+                        <th>Meaning</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="width: 100%;"></td>
+                        <td><input type="text" style="width: 100%;"></td>
+                        <td><input type="text" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="width: 100%;"></td>
+                        <td><input type="text" style="width: 100%;"></td>
+                        <td><input type="text" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="width: 100%;"></td>
+                        <td><input type="text" style="width: 100%;"></td>
+                        <td><input type="text" style="width: 100%;"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <p>List 5 common Latin or Greek roots and their meanings that would be helpful for middle school students to know:</p>
+                <table>
+                    <tr>
+                        <th>Root</th>
+                        <th>Meaning</th>
+                        <th>Example Word</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="e.g., bio"></td>
+                        <td><input type="text" placeholder="e.g., life"></td>
+                        <td><input type="text" placeholder="e.g., biology"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <p>How would you teach the meaning of the word "photosynthesis" using morphology?</p>
+                <textarea class="answer-space" rows="4" placeholder="Describe your teaching approach..."></textarea>
+            </div>
+        </div>
+
+        <!-- Section 3: Reading Comprehension and Fluency -->
+        <div class="section">
+            <h2>Section 3: Reading Comprehension and Fluency</h2>
+            
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <p>What are the three components of reading fluency?</p>
+                <ol>
+                    <li><input type="text" class="answer-space" style="width: 80%;"></li>
+                    <li><input type="text" class="answer-space" style="width: 80%;"></li>
+                    <li><input type="text" class="answer-space" style="width: 80%;"></li>
+                </ol>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <p>A student reads accurately but in a monotone voice with no expression. Which aspect of fluency needs support?</p>
+                <div class="multiple-choice">
+                    <label class="choice">
+                        <input type="radio" name="q9" value="a"> Rate
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q9" value="b"> Accuracy
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q9" value="c"> Prosody
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q9" value="d"> Comprehension
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <p>List 3 strategies you currently use to support reading comprehension in your content area:</p>
+                <ol>
+                    <li><input type="text" class="answer-space" style="width: 90%;"></li>
+                    <li><input type="text" class="answer-space" style="width: 90%;"></li>
+                    <li><input type="text" class="answer-space" style="width: 90%;"></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section 4: Assessment and Intervention -->
+        <div class="section">
+            <h2>Section 4: Assessment and Intervention</h2>
+            
+            <div class="question">
+                <div class="question-number">Question 11</div>
+                <p>You have a 7th grade student reading at a 3rd grade level. What are your first steps to support this student?</p>
+                <textarea class="answer-space" rows="5" placeholder="Describe your approach..."></textarea>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 12</div>
+                <p>What is the difference between a screening assessment and a diagnostic assessment?</p>
+                <textarea class="answer-space" rows="4" placeholder="Explain the difference..."></textarea>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 13</div>
+                <p>How do you currently identify students who are struggling with reading in your classroom?</p>
+                <textarea class="answer-space" rows="4" placeholder="Describe your methods..."></textarea>
+            </div>
+        </div>
+
+        <!-- Section 5: Practical Application -->
+        <div class="section">
+            <h2>Section 5: Practical Application</h2>
+            
+            <div class="question">
+                <div class="question-number">Question 14</div>
+                <p>You're teaching a science lesson on ecosystems. How would you support students who struggle with the reading?</p>
+                <textarea class="answer-space" rows="5" placeholder="List specific strategies..."></textarea>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 15</div>
+                <p>What vocabulary instruction strategies do you use before, during, and after reading a text?</p>
+                
+                <p><strong>Before Reading:</strong></p>
+                <textarea class="answer-space" rows="2"></textarea>
+                
+                <p><strong>During Reading:</strong></p>
+                <textarea class="answer-space" rows="2"></textarea>
+                
+                <p><strong>After Reading:</strong></p>
+                <textarea class="answer-space" rows="2"></textarea>
+            </div>
+        </div>
+
+        <!-- Self-Reflection Section -->
+        <div class="reflection-section">
+            <h2>Self-Reflection</h2>
+            
+            <div class="question">
+                <p><strong>Rate your confidence level in the following areas:</strong></p>
+                
+                <p>Teaching phonics concepts to struggling readers:</p>
+                <div class="confidence-scale">
+                    <label>
+                        <span>Not Confident</span>
+                        <input type="radio" name="conf1" value="1">
+                    </label>
+                    <label>
+                        <span>Somewhat Confident</span>
+                        <input type="radio" name="conf1" value="2">
+                    </label>
+                    <label>
+                        <span>Confident</span>
+                        <input type="radio" name="conf1" value="3">
+                    </label>
+                    <label>
+                        <span>Very Confident</span>
+                        <input type="radio" name="conf1" value="4">
+                    </label>
+                </div>
+                
+                <p>Using morphology to teach vocabulary:</p>
+                <div class="confidence-scale">
+                    <label>
+                        <span>Not Confident</span>
+                        <input type="radio" name="conf2" value="1">
+                    </label>
+                    <label>
+                        <span>Somewhat Confident</span>
+                        <input type="radio" name="conf2" value="2">
+                    </label>
+                    <label>
+                        <span>Confident</span>
+                        <input type="radio" name="conf2" value="3">
+                    </label>
+                    <label>
+                        <span>Very Confident</span>
+                        <input type="radio" name="conf2" value="4">
+                    </label>
+                </div>
+                
+                <p>Supporting reading comprehension in content areas:</p>
+                <div class="confidence-scale">
+                    <label>
+                        <span>Not Confident</span>
+                        <input type="radio" name="conf3" value="1">
+                    </label>
+                    <label>
+                        <span>Somewhat Confident</span>
+                        <input type="radio" name="conf3" value="2">
+                    </label>
+                    <label>
+                        <span>Confident</span>
+                        <input type="radio" name="conf3" value="3">
+                    </label>
+                    <label>
+                        <span>Very Confident</span>
+                        <input type="radio" name="conf3" value="4">
+                    </label>
+                </div>
+                
+                <p>Identifying and supporting struggling readers:</p>
+                <div class="confidence-scale">
+                    <label>
+                        <span>Not Confident</span>
+                        <input type="radio" name="conf4" value="1">
+                    </label>
+                    <label>
+                        <span>Somewhat Confident</span>
+                        <input type="radio" name="conf4" value="2">
+                    </label>
+                    <label>
+                        <span>Confident</span>
+                        <input type="radio" name="conf4" value="3">
+                    </label>
+                    <label>
+                        <span>Very Confident</span>
+                        <input type="radio" name="conf4" value="4">
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p><strong>What are your top 3 professional development needs related to literacy instruction?</strong></p>
+                <ol>
+                    <li><input type="text" class="answer-space" style="width: 90%;"></li>
+                    <li><input type="text" class="answer-space" style="width: 90%;"></li>
+                    <li><input type="text" class="answer-space" style="width: 90%;"></li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <p><strong>Additional comments or questions:</strong></p>
+                <textarea class="answer-space" rows="4" placeholder="Share any other thoughts, concerns, or specific areas where you'd like support..."></textarea>
+            </div>
+        </div>
+
+        <div class="note-box">
+            <strong>Thank you for completing this assessment!</strong>
+            <p>Your responses will help us design professional development that meets your specific needs. Remember, this is not evaluative - it's simply a tool to help us support you better.</p>
+        </div>
+
+        <button class="print-button" onclick="window.print()">Print Assessment</button>
+    </div>
+</body>
+</html>
