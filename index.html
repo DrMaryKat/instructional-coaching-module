@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructional Coaching: Supporting Merged Schools in Literacy & Pedagogy</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: var(--card-bg);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .module {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .module.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .card h4 {
+            color: var(--text-color);
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .learning-objectives {
+            background-color: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 1rem 0;
+        }
+
+        .learning-objectives ul {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .case-study {
+            background-color: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f0ad4e;
+            margin: 1rem 0;
+        }
+
+        .activity {
+            background-color: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px dashed var(--secondary-color);
+            margin: 1.5rem 0;
+        }
+
+        .activity h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .reflection {
+            background-color: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--success-color);
+            margin: 1.5rem 0;
+        }
+
+        .resources {
+            background-color: #f3e5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-secondary {
+            background-color: var(--success-color);
+        }
+
+        .button-secondary:hover {
+            background-color: #229954;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--success-color);
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .quiz {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 1rem 0;
+        }
+
+        .quiz-question {
+            margin: 1rem 0;
+        }
+
+        .quiz-question label {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-question label:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quiz-question input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .feedback {
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            display: none;
+        }
+
+        .feedback.correct {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .video-placeholder {
+            background-color: #000;
+            color: white;
+            padding: 4rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .download-resources {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instructional Coaching for Merged Schools</h1>
+        <p>Supporting Literacy Development & Pedagogical Excellence in Urban Education</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#overview" class="nav-link active" onclick="showModule('overview')">Overview</a></li>
+            <li><a href="#module1" class="nav-link" onclick="showModule('module1')">Context Analysis</a></li>
+            <li><a href="#module2" class="nav-link" onclick="showModule('module2')">Literacy Foundations</a></li>
+            <li><a href="#module3" class="nav-link" onclick="showModule('module3')">Critical Questioning</a></li>
+            <li><a href="#module4" class="nav-link" onclick="showModule('module4')">Culturally Responsive</a></li>
+            <li><a href="#module5" class="nav-link" onclick="showModule('module5')">Action Planning</a></li>
+            <li><a href="#resources" class="nav-link" onclick="showModule('resources')">Resources</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Module -->
+        <div id="overview" class="module active">
+            <div class="card">
+                <h2>Welcome to the Instructional Coaching Training Module</h2>
+                
+                <div class="case-study">
+                    <h3>Case Study: Washington Elementary-Middle School</h3>
+                    <p><strong>School Profile:</strong></p>
+                    <ul>
+                        <li>Recently merged K-8 school in an impoverished inner city neighborhood</li>
+                        <li>500 students (82% African American from low-income homes)</li>
+                        <li>24 teachers (79% white, 16 on improvement plans)</li>
+                        <li>Middle school teachers (grades 4-8) lack foundational literacy knowledge</li>
+                        <li>K-3 teachers struggle with critical questioning techniques</li>
+                    </ul>
+                </div>
+
+                <div class="learning-objectives">
+                    <h3>Training Objectives</h3>
+                    <p>By the end of this module, instructional coaches will be able to:</p>
+                    <ul>
+                        <li>Analyze the complex dynamics of merged schools in urban settings</li>
+                        <li>Build teacher capacity in foundational literacy concepts</li>
+                        <li>Implement critical questioning techniques across grade levels</li>
+                        <li>Foster culturally responsive teaching practices</li>
+                        <li>Create sustainable professional development plans</li>
+                        <li>Support teachers on improvement plans with dignity and effectiveness</li>
+                    </ul>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress" id="overall-progress">0%</div>
+                </div>
+
+                <button class="button" onclick="showModule('module1')">Begin Module 1</button>
+            </div>
+        </div>
+
+        <!-- Module 1: Context Analysis -->
+        <div id="module1" class="module">
+            <div class="card">
+                <h2>Module 1: Understanding the Context</h2>
+                
+                <h3>The Complexity of Merged Schools</h3>
+                <p>When schools merge, they bring together distinct cultures, expectations, and pedagogical approaches. This creates both challenges and opportunities for instructional coaches.</p>
+
+                <h4>Key Considerations:</h4>
+                <ul>
+                    <li><strong>Cultural Dynamics:</strong> 82% African American student population with 79% white teaching staff</li>
+                    <li><strong>Economic Context:</strong> Low-income community with specific educational needs</li>
+                    <li><strong>Professional Development Needs:</strong> 67% of teachers on improvement plans</li>
+                    <li><strong>Grade-Level Divide:</strong> Elementary vs. middle school pedagogical approaches</li>
+                </ul>
+
+                <div class="activity">
+                    <h4>Activity 1.1: Context Mapping</h4>
+                    <p>Create a visual map of the school's current state. Consider:</p>
+                    <ul>
+                        <li>Teacher strengths and areas for growth</li>
+                        <li>Student demographic and academic data</li>
+                        <li>Resource availability and constraints</li>
+                        <li>Community assets and partnerships</li>
+                    </ul>
+                    <button class="button-secondary" onclick="downloadTemplate('context-map')">Download Context Map Template</button>
+                </div>
+
+                <h3>Building Trust in Challenging Circumstances</h3>
+                <p>With 16 teachers on improvement plans, establishing trust is crucial. Approach coaching with:</p>
+                <ul>
+                    <li><strong>Asset-based mindset:</strong> Identify and build on existing strengths</li>
+                    <li><strong>Non-evaluative stance:</strong> Position yourself as a collaborative partner</li>
+                    <li><strong>Cultural humility:</strong> Acknowledge and address cultural dynamics</li>
+                    <li><strong>Transparency:</strong> Be clear about goals and processes</li>
+                </ul>
+
+                <div class="reflection">
+                    <h4>Reflection Questions</h4>
+                    <ol>
+                        <li>How might the cultural mismatch between teachers and students impact classroom dynamics?</li>
+                        <li>What assumptions might teachers hold that need to be addressed?</li>
+                        <li>How can you leverage community knowledge and assets?</li>
+                    </ol>
+                </div>
+
+                <div class="quiz">
+                    <h4>Knowledge Check</h4>
+                    <div class="quiz-question" id="q1">
+                        <p>What percentage of teachers at Washington Elementary-Middle School are on improvement plans?</p>
+                        <label><input type="radio" name="q1" value="a"> 33%</label>
+                        <label><input type="radio" name="q1" value="b"> 50%</label>
+                        <label><input type="radio" name="q1" value="c"> 67%</label>
+                        <label><input type="radio" name="q1" value="d"> 79%</label>
+                    </div>
+                    <button class="button" onclick="checkAnswer('q1', 'c')">Submit Answer</button>
+                    <div class="feedback" id="feedback-q1"></div>
+                </div>
+
+                <button class="button" onclick="showModule('module2')">Continue to Module 2</button>
+            </div>
+        </div>
+
+        <!-- Module 2: Literacy Foundations -->
+        <div id="module2" class="module">
+            <div class="card">
+                <h2>Module 2: Building Literacy Knowledge for Middle School Teachers</h2>
+                
+                <h3>The Challenge</h3>
+                <p>Middle school teachers (grades 4-8) report not understanding basic literacy terminology like "grapheme." This knowledge gap impacts their ability to support struggling readers.</p>
+
+                <h3>Essential Literacy Concepts</h3>
+                
+                <h4>1. Phonological and Phonemic Awareness</h4>
+                <table>
+                    <tr>
+                        <th>Term</th>
+                        <th>Definition</th>
+                        <th>Example</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                    <tr>
+                        <td>Phoneme</td>
+                        <td>The smallest unit of sound</td>
+                        <td>/c/ /a/ /t/ in "cat"</td>
+                        <td>Foundation for decoding</td>
+                    </tr>
+                    <tr>
+                        <td>Grapheme</td>
+                        <td>Letter or letters representing a phoneme</td>
+                        <td>"ch" represents /ch/</td>
+                        <td>Connects sound to print</td>
+                    </tr>
+                    <tr>
+                        <td>Morpheme</td>
+                        <td>Smallest unit of meaning</td>
+                        <td>"un-" means "not"</td>
+                        <td>Supports vocabulary growth</td>
+                    </tr>
+                </table>
+
+                <h4>2. The Simple View of Reading</h4>
+                <p><strong>Reading Comprehension = Decoding × Language Comprehension</strong></p>
+                <ul>
+                    <li>Both components are essential</li>
+                    <li>Middle school students may struggle with either or both</li>
+                    <li>Assessment must identify specific needs</li>
+                </ul>
+
+                <div class="activity">
+                    <h4>Activity 2.1: Literacy Concept Carousel</h4>
+                    <p>Design a professional development session where teachers rotate through stations to learn key literacy concepts:</p>
+                    <ol>
+                        <li><strong>Station 1:</strong> Phoneme-Grapheme Mapping</li>
+                        <li><strong>Station 2:</strong> Morphology in Action</li>
+                        <li><strong>Station 3:</strong> Fluency Building Strategies</li>
+                        <li><strong>Station 4:</strong> Comprehension Scaffolds</li>
+                    </ol>
+                    <button class="button-secondary" onclick="downloadTemplate('literacy-carousel')">Download Station Materials</button>
+                </div>
+
+                <h3>Adolescent Literacy Strategies</h3>
+                
+                <h4>Evidence-Based Approaches for Grades 4-8:</h4>
+                <ul>
+                    <li><strong>Word Study:</strong> Systematic morphology instruction</li>
+                    <li><strong>Fluency Practice:</strong> Repeated reading with purpose</li>
+                    <li><strong>Vocabulary Development:</strong> Explicit instruction in academic language</li>
+                    <li><strong>Comprehension Strategies:</strong> Before, during, and after reading activities</li>
+                </ul>
+
+                <div class="resources">
+                    <h4>Recommended Reading</h4>
+                    <ul>
+                        <li>"Bringing Words to Life" by Beck, McKeown, and Kucan</li>
+                        <li>"When Kids Can't Read" by Kylene Beers</li>
+                        <li>"Reading in the Wild" by Donalyn Miller</li>
+                    </ul>
+                </div>
+
+                <div class="video-placeholder">
+                    <h4>Video Demonstration</h4>
+                    <p>[Video: Modeling a Literacy Concept Mini-Lesson for Teachers]</p>
+                    <p>Runtime: 15 minutes</p>
+                </div>
+
+                <button class="button" onclick="showModule('module3')">Continue to Module 3</button>
+            </div>
+        </div>
+
+        <!-- Module 3: Critical Questioning -->
+        <div id="module3" class="module">
+            <div class="card">
+                <h2>Module 3: Developing Critical Questioning Techniques</h2>
+                
+                <h3>The Power of Questions in Learning</h3>
+                <p>K-3 teachers at Washington Elementary-Middle School need support in using critical questioning techniques that promote deeper thinking and engagement.</p>
+
+                <h3>Webb's Depth of Knowledge Framework</h3>
+                
+                <table>
+                    <tr>
+                        <th>DOK Level</th>
+                        <th>Description</th>
+                        <th>Question Stems</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>Level 1: Recall</td>
+                        <td>Basic recall of facts</td>
+                        <td>Who? What? When? Where?</td>
+                        <td>"What happened first in the story?"</td>
+                    </tr>
+                    <tr>
+                        <td>Level 2: Skill/Concept</td>
+                        <td>Using information</td>
+                        <td>How? Why? Compare...</td>
+                        <td>"How are these two characters alike?"</td>
+                    </tr>
+                    <tr>
+                        <td>Level 3: Strategic Thinking</td>
+                        <td>Reasoning and planning</td>
+                        <td>What if? Justify... Create...</td>
+                        <td>"What would happen if the character made a different choice?"</td>
+                    </tr>
+                    <tr>
+                        <td>Level 4: Extended Thinking</td>
+                        <td>Complex reasoning over time</td>
+                        <td>Design... Synthesize... Evaluate...</td>
+                        <td>"Create a new ending and explain how it changes the story's message"</td>
+                    </tr>
+                </table>
+
+                <h3>Culturally Responsive Questioning</h3>
+                <p>Questions should connect to students' lived experiences and cultural backgrounds:</p>
+                
+                <div class="activity">
+                    <h4>Activity 3.1: Question Transformation</h4>
+                    <p>Transform these traditional questions into culturally responsive ones:</p>
+                    <ol>
+                        <li><strong>Traditional:</strong> "What did the pilgrim eat for Thanksgiving?"
+                            <br><strong>Transformed:</strong> <input type="text" style="width: 80%; margin: 0.5rem 0;" placeholder="Your culturally responsive question here..."></li>
+                        <li><strong>Traditional:</strong> "How do plants grow in a garden?"
+                            <br><strong>Transformed:</strong> <input type="text" style="width: 80%; margin: 0.5rem 0;" placeholder="Your culturally responsive question here..."></li>
+                    </ol>
+                </div>
+
+                <h3>Wait Time and Talk Moves</h3>
+                
+                <h4>Essential Practices:</h4>
+                <ul>
+                    <li><strong>Wait Time 1:</strong> 3-5 seconds after asking a question</li>
+                    <li><strong>Wait Time 2:</strong> 3-5 seconds after a student responds</li>
+                    <li><strong>Talk Moves:</strong>
+                        <ul>
+                            <li>Revoicing: "So you're saying..."</li>
+                            <li>Repeating: Ask students to repeat</li>
+                            <li>Reasoning: "Why do you think that?"</li>
+                            <li>Adding on: "Who can add to this idea?"</li>
+                            <li>Wait time: Strategic pauses</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="reflection">
+                    <h4>Coaching Conversation Starters</h4>
+                    <ul>
+                        <li>"I noticed you asked mostly Level 1 questions. What might happen if we added some Level 3 questions?"</li>
+                        <li>"Your students had great ideas. How could we give them more time to develop their thoughts?"</li>
+                        <li>"Let's think about questions that connect to your students' neighborhood experiences..."</li>
+                    </ul>
+                </div>
+
+                <button class="button" onclick="showModule('module4')">Continue to Module 4</button>
+            </div>
+        </div>
+
+        <!-- Module 4: Culturally Responsive Teaching -->
+        <div id="module4" class="module">
+            <div class="card">
+                <h2>Module 4: Culturally Responsive Teaching Practices</h2>
+                
+                <h3>Addressing the Cultural Gap</h3>
+                <p>With 82% African American students and 79% white teachers, culturally responsive teaching is essential for student success.</p>
+
+                <h3>Zaretta Hammond's Culturally Responsive Teaching Framework</h3>
+                
+                <div class="learning-objectives">
+                    <h4>The Ready for Rigor Framework</h4>
+                    <ul>
+                        <li><strong>Awareness:</strong> Understanding one's own cultural lens</li>
+                        <li><strong>Learning Partnerships:</strong> Building authentic relationships</li>
+                        <li><strong>Information Processing:</strong> How culture impacts learning</li>
+                        <li><strong>Community of Learners:</strong> Creating inclusive environments</li>
+                    </ul>
+                </div>
+
+                <h3>Practical Strategies for Teachers</h3>
+                
+                <h4>1. Mirror, Window, and Sliding Glass Door Books</h4>
+                <ul>
+                    <li><strong>Mirrors:</strong> Books reflecting students' own experiences</li>
+                    <li><strong>Windows:</strong> Books showing different experiences</li>
+                    <li><strong>Sliding Glass Doors:</strong> Books students can step into</li>
+                </ul>
+
+                <h4>2. Cultural Learning Styles</h4>
+                <table>
+                    <tr>
+                        <th>Collectivist Cultures</th>
+                        <th>Individualist Cultures</th>
+                        <th>Classroom Implications</th>
+                    </tr>
+                    <tr>
+                        <td>Group harmony valued</td>
+                        <td>Individual achievement valued</td>
+                        <td>Balance both approaches</td>
+                    </tr>
+                    <tr>
+                        <td>Collaborative learning</td>
+                        <td>Independent work</td>
+                        <td>Offer choice in grouping</td>
+                    </tr>
+                    <tr>
+                        <td>Oral traditions strong</td>
+                        <td>Written traditions emphasized</td>
+                        <td>Include storytelling and discussion</td>
+                    </tr>
+                </table>
+
+                <div class="activity">
+                    <h4>Activity 4.1: Cultural Asset Mapping</h4>
+                    <p>Help teachers identify cultural assets in their students and community:</p>
+                    <ol>
+                        <li>Language practices (including home languages and dialects)</li>
+                        <li>Family and community knowledge</li>
+                        <li>Cultural traditions and celebrations</li>
+                        <li>Problem-solving approaches</li>
+                        <li>Communication styles</li>
+                    </ol>
+                    <button class="button-secondary" onclick="downloadTemplate('cultural-asset-map')">Download Asset Mapping Guide</button>
+                </div>
+
+                <h3>Addressing Implicit Bias</h3>
+                
+                <h4>Reflective Questions for Teachers:</h4>
+                <ul>
+                    <li>What assumptions do I make about students based on appearance or behavior?</li>
+                    <li>How do my expectations differ for different groups of students?</li>
+                    <li>What cultural norms am I enforcing that may not align with students' home cultures?</li>
+                    <li>How can I learn more about my students' communities and experiences?</li>
+                </ul>
+
+                <div class="resources">
+                    <h4>Professional Learning Resources</h4>
+                    <ul>
+                        <li>"Culturally Responsive Teaching" by Geneva Gay</li>
+                        <li>"For White Folks Who Teach in the Hood" by Christopher Emdin</li>
+                        <li>"Multiplication is for White People" by Lisa Delpit</li>
+                    </ul>
+                </div>
+
+                <button class="button" onclick="showModule('module5')">Continue to Module 5</button>
+            </div>
+        </div>
+
+        <!-- Module 5: Action Planning -->
+        <div id="module5" class="module">
+            <div class="card">
+                <h2>Module 5: Creating Sustainable Change Through Coaching</h2>
+                
+                <h3>Developing a Comprehensive Coaching Plan</h3>
+                
+                <h4>Phase 1: Assessment and Relationship Building (Weeks 1-4)</h4>
+                <ul>
+                    <li>Conduct classroom observations using non-evaluative protocols</li>
+                    <li>Hold individual conferences with all teachers</li>
+                    <li>Administer literacy knowledge assessment for middle school teachers</li>
+                    <li>Survey K-3 teachers on questioning techniques comfort level</li>
+                    <li>Build relationships through informal interactions</li>
+                </ul>
+
+                <h4>Phase 2: Targeted Professional Development (Weeks 5-12)</h4>
+                <table>
+                    <tr>
+                        <th>Week</th>
+                        <th>K-3 Focus</th>
+                        <th>4-8 Focus</th>
+                        <th>Whole School</th>
+                    </tr>
+                    <tr>
+                        <td>5-6</td>
+                        <td>DOK questioning levels</td>
+                        <td>Phoneme-grapheme basics</td>
+                        <td>Cultural responsiveness intro</td>
+                    </tr>
+                    <tr>
+                        <td>7-8</td>
+                        <td>Wait time & talk moves</td>
+                        <td>Morphology instruction</td>
+                        <td>Implicit bias workshop</td>
+                    </tr>
+                    <tr>
+                        <td>9-10</td>
+                        <td>Culturally responsive questions</td>
+                        <td>Comprehension strategies</td>
+                        <td>Community partnerships</td>
+                    </tr>
+                    <tr>
+                        <td>11-12</td>
+                        <td>Integration & practice</td>
+                        <td>Assessment & intervention</td>
+                        <td>Celebration & planning</td>
+                    </tr>
+                </table>
+
+                <h4>Phase 3: Coaching Cycles (Ongoing)</h4>
+                <div class="activity">
+                    <h4>The Coaching Cycle Process</h4>
+                    <ol>
+                        <li><strong>Pre-Conference:</strong> Set goals and plan together</li>
+                        <li><strong>Observation:</strong> Gather data on agreed focus area</li>
+                        <li><strong>Post-Conference:</strong> Reflect and plan next steps</li>
+                        <li><strong>Follow-Up:</strong> Check in and provide resources</li>
+                    </ol>
+                    <p>For teachers on improvement plans, increase frequency and provide additional support between cycles.</p>
+                </div>
+
+                <h3>Supporting Teachers on Improvement Plans</h3>
+                
+                <h4>Differentiated Support Strategies:</h4>
+                <ul>
+                    <li><strong>Weekly check-ins:</strong> Brief, supportive conversations</li>
+                    <li><strong>Co-teaching opportunities:</strong> Model strategies in their classroom</li>
+                    <li><strong>Peer observations:</strong> Arrange visits to strong practitioners</li>
+                    <li><strong>Resource curation:</strong> Provide targeted materials and tools</li>
+                    <li><strong>Celebration of growth:</strong> Document and acknowledge progress</li>
+                </ul>
+
+                <h3>Measuring Success</h3>
+                
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Baseline</th>
+                        <th>3-Month Goal</th>
+                        <th>6-Month Goal</th>
+                        <th>Data Source</th>
+                    </tr>
+                    <tr>
+                        <td>Teacher literacy knowledge</td>
+                        <td>TBD</td>
+                        <td>70% proficient</td>
+                        <td>90% proficient</td>
+                        <td>Pre/post assessment</td>
+                    </tr>
+                    <tr>
+                        <td>DOK 3-4 questions</td>
+                        <td>TBD</td>
+                        <td>25% of questions</td>
+                        <td>40% of questions</td>
+                        <td>Observation data</td>
+                    </tr>
+                    <tr>
+                        <td>Student engagement</td>
+                        <td>TBD</td>
+                        <td>+20%</td>
+                        <td>+35%</td>
+                        <td>Engagement rubric</td>
+                    </tr>
+                    <tr>
+                        <td>Reading growth</td>
+                        <td>TBD</td>
+                        <td>1.3 months/month</td>
+                        <td>1.5 months/month</td>
+                        <td>Reading assessments</td>
+                    </tr>
+                </table>
+
+                <div class="reflection">
+                    <h4>Final Reflection</h4>
+                    <p>As you prepare to implement this coaching plan:</p>
+                    <ol>
+                        <li>What aspects of this plan best fit your school's specific needs?</li>
+                        <li>What additional resources or support will you need?</li>
+                        <li>How will you maintain momentum during challenging times?</li>
+                        <li>What will success look like for your teachers and students?</li>
+                    </ol>
+                </div>
+
+                <button class="button" onclick="showModule('resources')">View Resources</button>
+            </div>
+        </div>
+
+        <!-- Resources Module -->
+        <div id="resources" class="module">
+            <div class="card">
+                <h2>Resources and Tools</h2>
+                
+                <h3>Downloadable Templates</h3>
+                <div class="download-resources">
+                    <button class="button-secondary" onclick="downloadTemplate('observation-form')">Observation Form</button>
+                    <button class="button-secondary" onclick="downloadTemplate('coaching-log')">Coaching Log</button>
+                    <button class="button-secondary" onclick="downloadTemplate('pd-planner')">PD Planning Template</button>
+                    <button class="button-secondary" onclick="downloadTemplate('literacy-assessment')">Literacy Knowledge Assessment</button>
+                    <button class="button-secondary" onclick="downloadTemplate('questioning-rubric')">Questioning Techniques Rubric</button>
+                </div>
+
+                <h3>Professional Reading List</h3>
+                <ul>
+                    <li><strong>Literacy Instruction:</strong>
+                        <ul>
+                            <li>"The Reading Strategies Book" by Jennifer Serravallo</li>
+                            <li>"Word Nerds" by Brenda Overturf</li>
+                            <li>"Disrupting Thinking" by Kylene Beers and Robert Probst</li>
+                        </ul>
+                    </li>
+                    <li><strong>Culturally Responsive Teaching:</strong>
+                        <ul>
+                            <li>"Culturally Sustaining Pedagogies" edited by Django Paris</li>
+                            <li>"We Want to Do More Than Survive" by Bettina Love</li>
+                            <li>"Cultivating Genius" by Gholdy Muhammad</li>
+                        </ul>
+                    </li>
+                    <li><strong>Instructional Coaching:</strong>
+                        <ul>
+                            <li>"The Impact Cycle" by Jim Knight</li>
+                            <li>"Student-Centered Coaching" by Diane Sweeney</li>
+                            <li>"Building Teachers' Capacity for Success" by Pete Hall</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Online Resources</h3>
+                <ul>
+                    <li><a href="#" onclick="alert('External link: Reading Rockets')">Reading Rockets - Literacy Strategies</a></li>
+                    <li><a href="#" onclick="alert('External link: Teaching Tolerance')">Learning for Justice - Culturally Responsive Resources</a></li>
+                    <li><a href="#" onclick="alert('External link: TNTP')">TNTP - Teacher Development Resources</a></li>
+                    <li><a href="#" onclick="alert('External link: Instructional Coaching Group')">Instructional Coaching Group</a></li>
+                </ul>
+
+                <h3>Certificate of Completion</h3>
+                <div class="card" style="background-color: #f9f9f9; text-align: center;">
+                    <h4>Congratulations!</h4>
+                    <p>You have completed the Instructional Coaching for Merged Schools training module.</p>
+                    <button class="button" onclick="generateCertificate()">Generate Certificate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Module navigation
+        function showModule(moduleId) {
+            // Hide all modules
+            const modules = document.querySelectorAll('.module');
+            modules.forEach(module => module.classList.remove('active'));
+            
+            // Show selected module
+            document.getElementById(moduleId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update progress
+            updateProgress();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Progress tracking
+        let completedModules = new Set();
+
+        function updateProgress() {
+            const currentModule = document.querySelector('.module.active').id;
+            completedModules.add(currentModule);
+            
+            const totalModules = 6; // Not counting resources
+            const progress = Math.min((completedModules.size / totalModules) * 100, 100);
+            
+            const progressBar = document.getElementById('overall-progress');
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = Math.round(progress) + '%';
+            }
+        }
+
+        // Quiz functionality
+        function checkAnswer(questionId, correctAnswer) {
+            const question = document.getElementById(questionId);
+            const selected = question.querySelector('input[type="radio"]:checked');
+            const feedback = document.getElementById('feedback-' + questionId);
+            
+            if (!selected) {
+                alert('Please select an answer.');
+                return;
+            }
+            
+            feedback.style.display = 'block';
+            if (selected.value === correctAnswer) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct! 67% of teachers (16 out of 24) are on improvement plans.';
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Not quite. Try again. (Hint: 16 out of 24 teachers)';
+            }
+        }
+
+        // Download templates (placeholder function)
+        function downloadTemplate(templateName) {
+            alert(`Downloading ${templateName} template...\nIn a real implementation, this would download a file.`);
+        }
+
+        // Generate certificate (placeholder function)
+        function generateCertificate() {
+            const name = prompt('Please enter your name for the certificate:');
+            if (name) {
+                alert(`Certificate generated for ${name}!\nIn a real implementation, this would create a downloadable PDF certificate.`);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

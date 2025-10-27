@@ -1,0 +1,361 @@
+/* Custom Theme Options for Instructional Coaching Module */
+/* Users can modify these variables to match their organization's branding */
+
+:root {
+    /* Primary Color Scheme - Default Blue Theme */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --text-color: #333333;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    
+    /* Alternative Color Schemes */
+    
+    /* Purple Theme
+    --primary-color: #5e35b1;
+    --secondary-color: #7e57c2;
+    --accent-color: #ff6f00;
+    --success-color: #00c853;
+    */
+    
+    /* Green Theme
+    --primary-color: #1b5e20;
+    --secondary-color: #388e3c;
+    --accent-color: #ff5722;
+    --success-color: #2e7d32;
+    */
+    
+    /* Warm Theme
+    --primary-color: #d84315;
+    --secondary-color: #ff6f00;
+    --accent-color: #4527a0;
+    --success-color: #558b2f;
+    */
+    
+    /* High Contrast Theme
+    --primary-color: #000000;
+    --secondary-color: #424242;
+    --accent-color: #d32f2f;
+    --success-color: #388e3c;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    */
+    
+    /* Typography */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: Georgia, 'Times New Roman', serif;
+    --font-mono: 'Courier New', Courier, monospace;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 3px;
+    --radius-md: 5px;
+    --radius-lg: 8px;
+    --radius-xl: 15px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 3px 10px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #1a252f;
+        --secondary-color: #2980b9;
+        --accent-color: #c0392b;
+        --success-color: #229954;
+        --text-color: #ecf0f1;
+        --bg-color: #0f1419;
+        --card-bg: #1a252f;
+    }
+    
+    table tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .learning-objectives {
+        background-color: rgba(33, 150, 243, 0.1);
+    }
+    
+    .case-study {
+        background-color: rgba(255, 193, 7, 0.1);
+    }
+    
+    .activity {
+        background-color: rgba(3, 169, 244, 0.1);
+    }
+    
+    .reflection {
+        background-color: rgba(76, 175, 80, 0.1);
+    }
+    
+    .resources {
+        background-color: rgba(156, 39, 176, 0.1);
+    }
+    
+    .video-placeholder {
+        background-color: #000;
+        border: 1px solid #333;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide navigation and interactive elements */
+    nav, .button, .progress-bar, .video-placeholder {
+        display: none !important;
+    }
+    
+    /* Adjust layout for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: white;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    /* Show all modules for printing */
+    .module {
+        display: block !important;
+        page-break-before: always;
+    }
+    
+    /* Ensure tables fit on page */
+    table {
+        font-size: 10pt;
+    }
+    
+    /* Add URLs after links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* Additional Component Styles */
+
+/* Animated Loading Spinner */
+.spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--secondary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Enhanced Button Styles */
+.button {
+    position: relative;
+    overflow: hidden;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.button:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    font-size: 0.875rem;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Progress Indicators */
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--spacing-xl) 0;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    z-index: -1;
+}
+
+.step:last-child::before {
+    display: none;
+}
+
+.step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #ddd;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.step.completed .step-number {
+    background-color: var(--success-color);
+}
+
+.step.active .step-number {
+    background-color: var(--secondary-color);
+}
+
+/* Card Variations */
+.card.highlight {
+    border: 2px solid var(--secondary-color);
+}
+
+.card.warning {
+    border-left: 5px solid var(--warning-color);
+    background-color: rgba(243, 156, 18, 0.1);
+}
+
+.card.success {
+    border-left: 5px solid var(--success-color);
+    background-color: rgba(39, 174, 96, 0.1);
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.875rem;
+    }
+    
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    td:before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+    }
+}
+
+/* Focus Styles for Accessibility */
+*:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Skip to Content Link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-decoration: none;
+    border-radius: 0 0 var(--radius-md) 0;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
